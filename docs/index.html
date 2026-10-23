@@ -421,6 +421,21 @@
     .contact-note, .contact-status { margin: 0; color: #aeb8c4; font-size: 10px; line-height: 1.65; }
     .contact-status:empty { display: none; }
     .contact-honeypot { display: none !important; }
+    .contact-notice {
+      position: fixed;
+      z-index: 20;
+      right: 24px;
+      bottom: 24px;
+      max-width: min(420px, calc(100% - 36px));
+      padding: 14px 18px;
+      border: 1px solid rgba(130,211,229,.34);
+      border-radius: 10px;
+      color: #f7efdf;
+      background: #1e2b42;
+      box-shadow: 0 16px 44px rgba(0,0,0,.38);
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
     @media (max-width: 850px) {
       .hero { padding: 68px 0 78px; }
@@ -872,6 +887,7 @@
       </form>
     </div>
   </dialog>
+  <p class="contact-notice" id="contact-notice" role="status" aria-live="polite" hidden></p>
 
   <footer>
     <div class="container footer-row">
@@ -894,6 +910,8 @@
     const contactForm = document.querySelector('.contact-form');
     const contactSubmit = contactForm.querySelector('[type="submit"]');
     const contactStatus = document.querySelector('#contact-status');
+    const contactNotice = document.querySelector('#contact-notice');
+    let contactNoticeTimeout;
     const currencyStatus = document.querySelector('#currency-status');
     const monthPrice = document.querySelector('[data-month-price]');
     const quarterPrice = document.querySelector('[data-quarter-price]');
@@ -1363,8 +1381,16 @@
           throw new Error(result.message || `Form service rejected the message (HTTP ${response.status}).`);
         }
 
-        contactStatus.textContent = copy.contactSent;
         contactForm.reset();
+        contactStatus.textContent = '';
+        contactNotice.textContent = copy.contactSent;
+        contactNotice.hidden = false;
+        contactDialog.close();
+        window.clearTimeout(contactNoticeTimeout);
+        contactNoticeTimeout = window.setTimeout(() => {
+          contactNotice.hidden = true;
+          contactNotice.textContent = '';
+        }, 6000);
       } catch (error) {
         console.error('Could not send contact form:', error);
         contactStatus.textContent = `${copy.contactError} ${error.message}`;
