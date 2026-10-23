@@ -23,7 +23,7 @@ The GPLv3 addon archive is copied beside the launcher under `downloads\QuestComp
 ## Configure the public update feed
 
 1. Publish `..\updates\latest.json` and the referenced ZIP to the website over HTTPS.
-2. `appsettings.json` is configured for `https://questcompass.online/updates/latest.json`; change it if the production domain changes.
+2. `appsettings.json` is configured for the GitHub Pages feed at `https://highlylikely2169-lgtm.github.io/QuestCompass/updates/latest.json`; change it if the production URL changes.
 3. Publish the launcher and its `appsettings.json` together.
 4. For each public release, update `version`, `downloadUrl`, and the lowercase SHA-256 in `latest.json`.
 
