@@ -212,8 +212,8 @@
       position: relative;
       z-index: 2;
       display: grid;
-      width: 216px;
-      height: 216px;
+      width: 172px;
+      height: 172px;
       place-items: center;
       border: 1px solid rgba(228,213,166,.44);
       border-radius: 50%;
@@ -221,9 +221,9 @@
       box-shadow: 0 0 0 12px rgba(15,20,16,.33), 0 0 0 13px rgba(228,213,166,.1), 0 19px 50px rgba(0,0,0,.45), 0 0 70px rgba(198,226,138,.11);
     }
     .compass::before, .compass::after { position: absolute; content: ""; background: rgba(230,220,185,.26); }
-    .compass::before { width: 1px; height: 178px; }
-    .compass::after { width: 178px; height: 1px; }
-    .compass svg { position: relative; z-index: 1; width: 116px; height: 116px; filter: drop-shadow(0 0 12px rgba(198,226,138,.25)); }
+    .compass::before { width: 1px; height: 140px; }
+    .compass::after { width: 140px; height: 1px; }
+    .compass svg { position: relative; z-index: 1; width: 92px; height: 92px; filter: drop-shadow(0 0 12px rgba(198,226,138,.25)); }
     .compass-label { position: absolute; color: #ddd3b6; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
     .compass-label.n { top: 16px; color: var(--lime); }
     .compass-label.s { bottom: 16px; }
@@ -426,10 +426,10 @@
       .hero { padding: 68px 0 78px; }
       .hero-grid { grid-template-columns: 1fr .85fr; gap: 22px; }
       .map-scene { min-height: 370px; }
-      .compass { width: 175px; height: 175px; }
-      .compass svg { width: 95px; height: 95px; }
-      .compass::before { height: 145px; }
-      .compass::after { width: 145px; }
+      .compass { width: 150px; height: 150px; }
+      .compass svg { width: 82px; height: 82px; }
+      .compass::before { height: 122px; }
+      .compass::after { width: 122px; }
       .map-card.quest { right: -6px; }
       .proof-row { grid-template-columns: repeat(3, 1fr); padding-block: 18px; }
       .proof-intro { grid-column: 1/-1; }
@@ -470,7 +470,10 @@
       .hero-copy > p { font-size: 13px; }
       .map-scene { min-height: 330px; margin-inline: 5px; }
       .map { inset: 10px 6px 16px; }
-      .compass { width: 166px; height: 166px; }
+      .compass { width: 140px; height: 140px; }
+      .compass svg { width: 76px; height: 76px; }
+      .compass::before { height: 114px; }
+      .compass::after { width: 114px; }
       .map-card.quest { top: 22px; right: -4px; }
       .map-card.progress { bottom: 25px; left: -9px; }
       .proof-row { grid-template-columns: 1fr 1fr; gap: 14px 10px; padding-block: 18px; }
@@ -684,7 +687,7 @@
         </div>
         <div class="map-scene" aria-label="A compass marks a quest route across a fantasy map of Tirisfal, Silverpine, and Hillsbrad">
           <div class="map">
-            <img class="map-art" src="assets/questcompass-map.svg" alt="" aria-hidden="true">
+            <img class="map-art" src="assets/questcompass-world-map.svg" alt="" aria-hidden="true">
           </div>
           <svg class="route" viewBox="0 0 500 445" preserveAspectRatio="none" aria-hidden="true">
             <path d="M72 349C112 311 151 321 190 274c30-36 30-81 75-94 32-10 54 13 72-9 17-21 10-59 44-73"/>
@@ -919,7 +922,7 @@
           '.hero-actions .button': 'Find your path',
           '.text-link': 'Explore the features',
           '.hero-note': 'Made for a smoother adventure, without the busywork',
-          '.map-scene': 'A compass marks a quest route across a fantasy map of Tirisfal, Silverpine, and Hillsbrad',
+          '.map-scene': 'A smaller QuestCompass icon marks the route between two fantasy continents',
           '.map-card.quest small': 'Current objective',
           '.map-card.quest strong': 'Your path is marked',
           '.map-card.progress small': 'Your progress',
@@ -1036,7 +1039,7 @@
           '.hero-actions .button': 'Открыть свой маршрут',
           '.text-link': 'Узнать о возможностях',
           '.hero-note': 'Для комфортной игры — без лишней суеты',
-          '.map-scene': 'Компас отмечает маршрут по фэнтезийной карте Тирисфаля, Серебряного бора и Предгорий Хилсбрада',
+          '.map-scene': 'Уменьшенный значок QuestCompass отмечает маршрут между двумя фэнтезийными континентами',
           '.map-card.quest small': 'Текущая цель',
           '.map-card.quest strong': 'Путь уже отмечен',
           '.map-card.progress small': 'Твой прогресс',

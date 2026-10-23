@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
+  <defs>
+    <linearGradient id="sea" x1="80" y1="20" x2="830" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9AF8D"/>
+      <stop offset=".48" stop-color="#8F9B83"/>
+      <stop offset="1" stop-color="#6E827D"/>
+    </linearGradient>
+    <linearGradient id="land" x1="135" y1="60" x2="730" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6BD79"/>
+      <stop offset=".52" stop-color="#B88F4F"/>
+      <stop offset="1" stop-color="#886745"/>
+    </linearGradient>
+    <linearGradient id="shore" x1="160" y1="60" x2="715" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2D99C"/>
+      <stop offset="1" stop-color="#D4B56D"/>
+    </linearGradient>
+    <radialGradient id="seaLight" cx="0" cy="0" r="1" gradientTransform="matrix(365 259 -240 339 442 326)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E4D7AA" stop-opacity=".56"/>
+      <stop offset="1" stop-color="#E4D7AA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="m3 7 7-2m13 21 8-3M18 8l3 1" stroke="#FAECC8" stroke-opacity=".12"/>
+      <circle cx="7" cy="25" r="1" fill="#473923" fill-opacity=".13"/>
+      <circle cx="27" cy="9" r=".8" fill="#473923" fill-opacity=".1"/>
+    </pattern>
+    <pattern id="woods" width="36" height="34" patternUnits="userSpaceOnUse">
+      <path d="m10 4-6 12h4l-3 5h10l-3-5h4L10 4Zm17 15-5 10h3l-2 4h9l-3-4h3l-5-10Z" fill="#47543E" fill-opacity=".68"/>
+      <circle cx="11" cy="25" r="1.2" fill="#E7CE91" fill-opacity=".56"/>
+    </pattern>
+    <clipPath id="world">
+      <path d="m83 78 52-38 68 8 45-23 43 25 60-8 38 31 52-10 45 25 51-4 31 32 59 9 18 42 42 18 6 48 37 34-15 45 26 39-28 44-8 49-45 19-19 53-48 18-24 46-65 5-38 33-58-16-49 31-54-24-46 20-46-34-55 9-31-42-51-10-11-48-43-22 12-47-31-35 24-43-21-42 26-38-14-45 37-31-9-46 44-18 20-42Z"/>
+    </clipPath>
+    <clipPath id="west">
+      <path d="m160 100 57-18 44 17 43-11 38 26 16 43-17 36 12 38-26 40 10 34-22 39 5 45-31 41-7 54-36 39-40 3-26-23-42 10-35-25-18-47-37-21 9-40-24-27 19-37-14-37 27-31-5-36 32-22-2-36Z"/>
+    </clipPath>
+    <clipPath id="east">
+      <path d="m624 103 43-19 37 11 29-15 37 20 24 36 42 13 9 36-23 27 13 39-24 36 13 32-25 34 11 40-27 29-7 48-35 29-40-8-29 23-36-17-39 12-20-31-35-17 12-37-17-27 24-29-10-32 25-24-5-35 24-22-12-33 28-19-10-32 22-24Z"/>
+    </clipPath>
+    <filter id="shadow" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#sea)"/>
+  <rect width="900" height="700" fill="url(#seaLight)"/>
+  <rect width="900" height="700" fill="url(#paper)"/>
+
+  <g stroke="#E9DBB1" stroke-opacity=".19">
+    <path d="M240 0c-67 71-53 115-7 151 38 31 60 63 15 100-45 36-55 70-17 108 39 39 51 74 5 112-38 32-51 66-15 111 28 35 28 70-13 118"/>
+    <path d="M258 0c-66 71-51 113-6 148 39 31 62 65 17 102-45 36-55 70-17 108 39 39 51 74 5 112-38 32-51 66-15 111 28 35 28 70-13 118"/>
+    <path d="M659 0c53 68 45 110-3 149-44 36-50 68-8 102 46 37 49 71 8 109-39 37-47 73-5 111 38 35 43 71 4 117"/>
+    <path d="M679 0c52 68 44 110-4 149-44 36-50 68-8 102 46 37 49 71 8 109-39 37-47 73-5 111 38 35 43 71 4 117"/>
+    <path d="M0 205c131-42 204-13 274 23m-272 3c132-42 208-12 277 24M0 521c128-48 209-17 278 19m-277 8c128-48 212-17 281 19"/>
+  </g>
+
+  <path d="m160 100 57-18 44 17 43-11 38 26 16 43-17 36 12 38-26 40 10 34-22 39 5 45-31 41-7 54-36 39-40 3-26-23-42 10-35-25-18-47-37-21 9-40-24-27 19-37-14-37 27-31-5-36 32-22-2-36Z" fill="#352B1F" fill-opacity=".5" filter="url(#shadow)" transform="translate(8 11)"/>
+  <path d="m160 100 57-18 44 17 43-11 38 26 16 43-17 36 12 38-26 40 10 34-22 39 5 45-31 41-7 54-36 39-40 3-26-23-42 10-35-25-18-47-37-21 9-40-24-27 19-37-14-37 27-31-5-36 32-22-2-36Z" fill="url(#land)" stroke="url(#shore)" stroke-width="8"/>
+  <path d="m624 103 43-19 37 11 29-15 37 20 24 36 42 13 9 36-23 27 13 39-24 36 13 32-25 34 11 40-27 29-7 48-35 29-40-8-29 23-36-17-39 12-20-31-35-17 12-37-17-27 24-29-10-32 25-24-5-35 24-22-12-33 28-19-10-32 22-24Z" fill="#352B1F" fill-opacity=".5" filter="url(#shadow)" transform="translate(8 11)"/>
+  <path d="m624 103 43-19 37 11 29-15 37 20 24 36 42 13 9 36-23 27 13 39-24 36 13 32-25 34 11 40-27 29-7 48-35 29-40-8-29 23-36-17-39 12-20-31-35-17 12-37-17-27 24-29-10-32 25-24-5-35 24-22-12-33 28-19-10-32 22-24Z" fill="url(#land)" stroke="url(#shore)" stroke-width="8"/>
+
+  <g clip-path="url(#west)">
+    <rect x="105" y="70" width="360" height="580" fill="url(#paper)"/>
+    <rect x="119" y="108" width="280" height="276" fill="url(#woods)" opacity=".82"/>
+    <g stroke="#715D3C" stroke-opacity=".34" stroke-width="2">
+      <path d="M112 178c79-47 161-37 239 13m-245 0c82-48 167-38 250 14m-252 2c83-48 173-39 260 15"/>
+      <path d="M131 421c62-57 141-64 220-20m-226 41c67-59 150-66 235-20m-231 40c67-57 151-61 237-17"/>
+      <path d="M173 527c36-43 76-57 121-43m-119 57c39-44 80-57 125-41"/>
+    </g>
+    <g fill="#725737" fill-opacity=".68">
+      <path d="m200 276 15-27 15 27h-30Zm19-6 19-34 19 34h-38Zm23 7 17-30 17 30h-34Zm34-7 13-24 13 24h-26Z"/>
+      <path d="m308 460 17-30 17 30h-34Zm21-4 18-32 18 32h-36Z"/>
+    </g>
+  </g>
+  <g clip-path="url(#east)">
+    <rect x="590" y="68" width="290" height="590" fill="url(#paper)"/>
+    <rect x="611" y="106" width="260" height="265" fill="url(#woods)" opacity=".88"/>
+    <g stroke="#715D3C" stroke-opacity=".34" stroke-width="2">
+      <path d="M610 432c66-47 144-45 230 5m-231 20c71-49 151-47 238 5m-237 17c71-48 152-45 237 6"/>
+      <path d="M641 178c45-29 93-24 140 12m-143 18c51-31 101-25 152 14"/>
+      <path d="M674 549c34-39 72-49 116-31m-114 46c37-40 77-49 121-29"/>
+    </g>
+    <g fill="#725737" fill-opacity=".68">
+      <path d="m675 299 17-30 17 30h-34Zm20-6 19-34 19 34h-38Zm23 7 17-30 17 30h-34Zm34-7 13-24 13 24h-26Z"/>
+      <path d="m754 463 18-32 18 32h-36Zm24-4 16-29 16 29h-32Z"/>
+    </g>
+  </g>
+
+  <path d="M448 92c-22 34 7 53-10 81-19 32-47 43-39 73 8 28 42 30 41 58-1 30-36 43-27 73 8 27 42 31 34 63-6 23-37 35-23 69" stroke="#466C68" stroke-opacity=".46" stroke-width="16"/>
+  <path d="M448 92c-22 34 7 53-10 81-19 32-47 43-39 73 8 28 42 30 41 58-1 30-36 43-27 73 8 27 42 31 34 63-6 23-37 35-23 69" stroke="#B7D0A6" stroke-opacity=".58" stroke-width="4"/>
+  <path d="M448 92c-22 34 7 53-10 81-19 32-47 43-39 73 8 28 42 30 41 58-1 30-36 43-27 73 8 27 42 31 34 63-6 23-37 35-23 69" stroke="#EEF0CE" stroke-opacity=".52" stroke-width="1.5"/>
+
+  <g stroke="#765C35" stroke-opacity=".56">
+    <path d="M310 386c61-65 95-88 146-83 53 5 86 59 150 65 43 4 74-7 114-31" stroke-width="3"/>
+    <path d="M310 386c61-65 95-88 146-83 53 5 86 59 150 65 43 4 74-7 114-31" stroke-width="11" stroke-opacity=".14"/>
+    <path d="M330 412c61-65 95-88 146-83 53 5 86 59 150 65 43 4 74-7 114-31" stroke-width="1.5" stroke-dasharray="3 9"/>
+  </g>
+  <g fill="#E6D59E" stroke="#765C35" stroke-width="2">
+    <circle cx="340" cy="355" r="8"/>
+    <circle cx="601" cy="373" r="8"/>
+    <circle cx="697" cy="342" r="8"/>
+  </g>
+  <g fill="#765C35">
+    <circle cx="340" cy="355" r="2.5"/>
+    <circle cx="601" cy="373" r="2.5"/>
+    <circle cx="697" cy="342" r="2.5"/>
+  </g>
+
+  <g fill="#59472E" fill-opacity=".88" font-family="Georgia,serif" text-anchor="middle">
+    <text x="251" y="372" font-size="20" letter-spacing="3">WESTERN WILDS</text>
+    <text x="717" y="411" font-size="19" letter-spacing="2.8">EASTERN MARCHES</text>
+    <text x="453" y="248" font-size="12" letter-spacing="2" fill-opacity=".65">THE GREY SEA</text>
+    <text x="474" y="544" font-size="12" letter-spacing="2" fill-opacity=".65">MISTFALL REACH</text>
+  </g>
+  <g fill="#E1C789" stroke="#6F5838" stroke-opacity=".6">
+    <path d="m468 312 13 27-13 21-13-21 13-27Z"/>
+    <path d="m489 434 9 18-9 16-9-16 9-18Z"/>
+    <path d="m404 491 7 14-7 12-7-12 7-14Z"/>
+  </g>
+
+  <g stroke="#634D31" stroke-opacity=".58" stroke-width="2">
+    <path d="M73 75c80-37 145-50 203-41M680 625c61-5 107-19 158-47M70 594c18 23 35 39 61 56M780 92c22 19 37 41 48 69"/>
+    <circle cx="103" cy="94" r="3" fill="#D8BD7C"/>
+    <circle cx="817" cy="578" r="3" fill="#D8BD7C"/>
+    <circle cx="143" cy="644" r="3" fill="#D8BD7C"/>
+  </g>
+</svg>
