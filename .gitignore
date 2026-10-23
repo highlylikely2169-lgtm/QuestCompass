@@ -1,0 +1,6 @@
+.vs/
+**/bin/
+**/obj/
+launcher/publish/
+launcher/*.csproj.user
+launcher/QuestCompass-Launcher-win-x64-*.zip
