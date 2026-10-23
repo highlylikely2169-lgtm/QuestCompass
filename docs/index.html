@@ -189,37 +189,22 @@
       overflow: hidden;
       border: 1px solid rgba(233,224,191,.15);
       border-radius: 19px;
-      background-color: #202821;
-      background-image:
-        radial-gradient(ellipse at 70% 17%, rgba(153,170,109,.28), transparent 28%),
-        radial-gradient(ellipse at 18% 73%, rgba(166,131,74,.16), transparent 32%),
-        linear-gradient(132deg, transparent 0 38%, rgba(202,187,141,.08) 38.2%, transparent 38.7% 59%, rgba(202,187,141,.08) 59.2%, transparent 59.7%),
-        repeating-radial-gradient(ellipse at 59% 49%, transparent 0 34px, rgba(215,209,179,.06) 35px 36px, transparent 37px 71px);
-      box-shadow: 0 35px 90px rgba(0,0,0,.35);
+      background: #172d38;
+      box-shadow: inset 0 0 70px rgba(8,14,25,.38), 0 35px 90px rgba(0,0,0,.35);
       transform: rotate(2deg);
     }
+    .map-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .map::before, .map::after { position: absolute; content: ""; pointer-events: none; }
     .map::before {
       inset: 0;
-      opacity: .27;
-      background-image: linear-gradient(rgba(234,239,222,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(234,239,222,.07) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(135deg, transparent 8%, black 45%, transparent 93%);
+      z-index: 1;
+      background: linear-gradient(120deg, rgba(13,23,36,.12), transparent 48%, rgba(13,23,36,.2));
     }
     .map::after {
-      top: 41%;
-      left: -8%;
-      width: 118%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(226,190,121,.7), rgba(226,190,121,.16), transparent);
-      transform: rotate(-29deg);
-      box-shadow: 0 0 15px rgba(226,190,121,.36);
+      inset: 0;
+      z-index: 1;
+      background: radial-gradient(ellipse, transparent 42%, rgba(9,17,31,.38) 100%);
     }
-    .map-label { position: absolute; color: rgba(228,222,194,.44); font-family: var(--display); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; }
-    .map-label.one { top: 22%; left: 13%; }
-    .map-label.two { right: 14%; bottom: 21%; }
-    .map-label.three { top: 14%; right: 23%; color: rgba(198,226,138,.51); }
-    .map-river { position: absolute; top: 17%; left: 45%; width: 104px; height: 310px; border: 1px solid rgba(119,162,153,.18); border-width: 0 2px 0 0; border-radius: 50%; transform: rotate(30deg); }
     .route { position: absolute; inset: 0; z-index: 1; }
     .route path { fill: none; stroke: var(--gold); stroke-dasharray: 5 8; stroke-linecap: round; stroke-width: 2; }
     .route circle { fill: var(--lime); stroke: #202821; stroke-width: 5; }
@@ -612,7 +597,6 @@
     h1 { font-size: clamp(50px, 6.4vw, 80px); letter-spacing: -.04em; }
     .hero-copy > p { font-size: 16px; }
     .text-link { font-size: 13px; }
-    .map-label { font-size: 10px; }
     .compass-label { font-size: 9px; }
     .card-text small { font-size: 10px; }
     .card-text strong { font-size: 12px; }
@@ -698,12 +682,9 @@
             Made for a smoother adventure, without the busywork
           </div>
         </div>
-        <div class="map-scene" aria-label="Illustration of a compass and an in-game route">
+        <div class="map-scene" aria-label="A compass marks a quest route across a fantasy map of Tirisfal, Silverpine, and Hillsbrad">
           <div class="map">
-            <span class="map-label one">Silverpine</span>
-            <span class="map-label two">Hillsbrad</span>
-            <span class="map-label three">Tirisfal</span>
-            <span class="map-river"></span>
+            <img class="map-art" src="assets/questcompass-map.svg" alt="" aria-hidden="true">
           </div>
           <svg class="route" viewBox="0 0 500 445" preserveAspectRatio="none" aria-hidden="true">
             <path d="M72 349C112 311 151 321 190 274c30-36 30-81 75-94 32-10 54 13 72-9 17-21 10-59 44-73"/>
@@ -938,7 +919,7 @@
           '.hero-actions .button': 'Find your path',
           '.text-link': 'Explore the features',
           '.hero-note': 'Made for a smoother adventure, without the busywork',
-          '.map-scene': 'Illustration of a compass and an in-game route',
+          '.map-scene': 'A compass marks a quest route across a fantasy map of Tirisfal, Silverpine, and Hillsbrad',
           '.map-card.quest small': 'Current objective',
           '.map-card.quest strong': 'Your path is marked',
           '.map-card.progress small': 'Your progress',
@@ -1055,7 +1036,7 @@
           '.hero-actions .button': 'Открыть свой маршрут',
           '.text-link': 'Узнать о возможностях',
           '.hero-note': 'Для комфортной игры — без лишней суеты',
-          '.map-scene': 'Иллюстрация компаса и игрового маршрута',
+          '.map-scene': 'Компас отмечает маршрут по фэнтезийной карте Тирисфаля, Серебряного бора и Предгорий Хилсбрада',
           '.map-card.quest small': 'Текущая цель',
           '.map-card.quest strong': 'Путь уже отмечен',
           '.map-card.progress small': 'Твой прогресс',
