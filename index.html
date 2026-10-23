@@ -352,7 +352,75 @@
     footer { border-top: 1px solid var(--line); }
     .footer-row { display: flex; min-height: 84px; align-items: center; justify-content: space-between; gap: 20px; }
     .footer-row .brand-name { font-size: 14px; }
-    .copyright, .footer-note { color: #77837a; font-size: 10px; }
+    .copyright, .footer-note, .footer-contact { color: #77837a; font-size: 10px; }
+    .footer-contact:hover { color: var(--lime); }
+
+    .contact-dialog {
+      width: min(760px, calc(100% - 32px));
+      max-width: none;
+      max-height: min(90vh, 820px);
+      margin: auto;
+      padding: 0;
+      overflow: auto;
+      border: 0;
+      border-radius: 14px;
+      color: var(--text);
+      background: transparent;
+    }
+    .contact-dialog::backdrop { background: rgba(6, 11, 20, .78); backdrop-filter: blur(7px); }
+    .contact-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: .8fr 1fr;
+      align-items: start;
+      gap: 42px;
+      padding: 38px;
+      border: 1px solid rgba(130,211,229,.2);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(44,75,107,.38), rgba(255,255,255,.025));
+      box-shadow: inset 0 1px rgba(255,255,255,.04);
+    }
+    .contact-card .section-heading { margin: 0; padding-right: 40px; }
+    .contact-card .section-heading h2 { margin-top: 15px; }
+    .contact-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid rgba(130,211,229,.22);
+      border-radius: 9px;
+      color: #e4e9eb;
+      background: rgba(12,20,34,.55);
+      font-size: 21px;
+      cursor: pointer;
+    }
+    .contact-close:hover { border-color: rgba(240,196,107,.65); color: var(--lime); }
+    .contact-form { display: grid; gap: 16px; }
+    .contact-form label { display: grid; gap: 7px; color: #dfe4e7; font-size: 11px; font-weight: 600; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgba(130,211,229,.22);
+      border-radius: 8px;
+      outline: none;
+      padding: 12px 13px;
+      color: var(--text);
+      background: rgba(12,20,34,.55);
+      font: inherit;
+      font-size: 13px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: rgba(240,196,107,.72);
+      box-shadow: 0 0 0 3px rgba(240,196,107,.12);
+    }
+    .contact-form textarea { min-height: 132px; resize: vertical; }
+    .contact-form .button { justify-self: start; min-height: 46px; border: 0; cursor: pointer; }
+    .contact-note, .contact-status { margin: 0; color: #aeb8c4; font-size: 10px; line-height: 1.65; }
+    .contact-status:empty { display: none; }
+    .contact-honeypot { display: none !important; }
 
     @media (max-width: 850px) {
       .hero { padding: 68px 0 78px; }
@@ -421,8 +489,10 @@
       .plan { padding: 23px; }
       .plan-caption { min-height: 0; }
       .faq-grid .section-heading { margin-bottom: 0; }
+      .contact-card { grid-template-columns: 1fr; gap: 24px; padding: 28px 22px 24px; }
       .cta-panel { min-height: 0; align-items: flex-start; flex-direction: column; padding: 30px 25px; }
       .cta-panel .button { width: 100%; }
+      .contact-form .button { width: 100%; }
       .final-cta { padding-bottom: 70px; }
       .footer-row { min-height: 90px; flex-wrap: wrap; justify-content: space-between; padding-block: 19px; }
       .footer-note { display: none; }
@@ -510,6 +580,51 @@
       .nav-links { background: #192438; }
       .hero::after { right: -42%; width: 95%; }
     }
+
+    :root {
+      --font: "Trebuchet MS", "Segoe UI", sans-serif;
+      --display: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    }
+    body { font-size: 16px; }
+    .eyebrow { font-size: 12px; }
+    .brand-name { font-size: 18px; }
+    .nav-links { font-size: 14px; }
+    .language-trigger, .language-option-copy strong { font-size: 12px; }
+    .language-option-copy small { font-size: 10px; }
+    .language-option-check { font-size: 14px; }
+    .nav-cta, .button, .plan .button { font-size: 13px; }
+    .availability, .hero-note, .proof-intro, .proof-item { font-size: 12px; }
+    h1 { font-size: clamp(50px, 6.4vw, 80px); letter-spacing: -.04em; }
+    .hero-copy > p { font-size: 16px; }
+    .text-link { font-size: 13px; }
+    .map-label { font-size: 10px; }
+    .compass-label { font-size: 9px; }
+    .card-text small { font-size: 10px; }
+    .card-text strong { font-size: 12px; }
+    .section-heading h2 { font-size: clamp(35px, 4.2vw, 48px); letter-spacing: -.04em; }
+    .section-heading p { font-size: 14px; }
+    .feature h3 { font-size: 16px; }
+    .feature p, .step p, details p { font-size: 13px; }
+    .step-num { font-size: 11px; }
+    .step h3 { font-size: 14px; }
+    .popular { font-size: 9px; }
+    .plan-name { font-size: 13px; }
+    .price { font-size: 36px; letter-spacing: -.035em; }
+    .price span { font-size: 12px; }
+    .plan-caption, .plan li, .pricing-footnote { font-size: 11px; }
+    summary { font-size: 13px; }
+    .cta-panel h2 { font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -.035em; }
+    .footer-row .brand-name { font-size: 15px; }
+    .copyright, .footer-note, .footer-contact, .contact-note, .contact-status { font-size: 11px; }
+    .contact-form label { font-size: 12px; }
+    .contact-form input, .contact-form textarea { font-size: 14px; }
+    @media (max-width: 640px) {
+      .brand-name, .footer-row .brand-name { font-size: 16px; }
+      h1 { font-size: clamp(51px, 13.2vw, 70px); }
+      .hero-copy > p { font-size: 14px; }
+      .proof-item { font-size: 11px; }
+      .section-heading h2 { font-size: 36px; }
+    }
   </style>
 </head>
 <body>
@@ -526,6 +641,7 @@
         <a href="#how">How it works</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="language-picker" id="language-picker">
         <button class="language-trigger" id="language-trigger" type="button" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-options">
@@ -732,11 +848,36 @@
         </div>
       </div>
     </section>
+
   </main>
+
+  <dialog class="contact-dialog" id="contact" aria-labelledby="contact-title">
+    <div class="contact-card">
+      <button class="contact-close" type="button" aria-label="Close message form">×</button>
+      <div class="section-heading contact-heading">
+        <span class="eyebrow">Send a raven</span>
+        <h2 id="contact-title">Get in touch.</h2>
+        <p>Have a question, an idea, or feedback about QuestCompass? Send a message and I'll get back to you.</p>
+      </div>
+      <form class="contact-form" action="https://formsubmit.co/tottitoony@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="QuestCompass website feedback">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://highlylikely2169-lgtm.github.io/QuestCompass/?contact=sent">
+        <label class="contact-honeypot" aria-hidden="true">Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+        <label for="contact-name">Your name<input id="contact-name" name="name" type="text" maxlength="100" autocomplete="name" required></label>
+        <label for="contact-email">Your email<input id="contact-email" name="email" type="email" maxlength="254" autocomplete="email" required></label>
+        <label for="contact-message">Message<textarea id="contact-message" name="message" maxlength="5000" required></textarea></label>
+        <button class="button" type="submit">Send message <span aria-hidden="true">↗</span></button>
+        <p class="contact-note">Messages are delivered using FormSubmit, an external form service.</p>
+        <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
 
   <footer>
     <div class="container footer-row">
       <a class="brand" href="#" aria-label="QuestCompass — home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.2"/><path d="m15.7 8.3-2.2 5.2-5.2 2.2 2.2-5.2 5.2-2.2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span class="brand-name">Quest<span>Compass</span></span></a>
+      <a class="footer-contact" href="#contact">Contact</a>
       <span class="copyright">© <span id="year"></span> QuestCompass. All rights reserved.</span>
       <span class="footer-note">Not affiliated with Blizzard Entertainment.</span>
     </div>
@@ -749,6 +890,8 @@
     const languageFlag = document.querySelector('#language-flag');
     const languageName = document.querySelector('#language-name');
     const languageOptions = document.querySelector('#language-options');
+    const contactDialog = document.querySelector('#contact');
+    const contactClose = document.querySelector('.contact-close');
     const currencyStatus = document.querySelector('#currency-status');
     const monthPrice = document.querySelector('[data-month-price]');
     const quarterPrice = document.querySelector('[data-quarter-price]');
@@ -766,6 +909,7 @@
           '.nav-links a:nth-child(2)': 'How it works',
           '.nav-links a:nth-child(3)': 'Pricing',
           '.nav-links a:nth-child(4)': 'FAQ',
+          '.nav-links a:nth-child(5)': 'Contact',
           '.nav-cta': 'Choose your plan',
           '.menu-button': 'Open menu',
           '.availability': 'The questing addon for WoW Forever',
@@ -845,10 +989,21 @@
           '.cta-panel .eyebrow': 'Your next adventure',
           '.cta-panel h2': 'Azeroth is waiting.<br>Your next adventure starts here.',
           '.cta-panel .button': 'Explore membership',
+          '.contact-heading .eyebrow': 'Send a raven',
+          '.contact-heading h2': 'Get in touch.',
+          '.contact-heading p': "Have a question, an idea, or feedback about QuestCompass? Send a message and I'll get back to you.",
+          '.contact-form label[for="contact-name"]': 'Your name',
+          '.contact-form label[for="contact-email"]': 'Your email',
+          '.contact-form label[for="contact-message"]': 'Message',
+          '.contact-form .button': 'Send message',
+          '.contact-note': 'Messages are delivered using FormSubmit, an external form service.',
+          '.contact-close': 'Close message form',
+          '.footer-contact': 'Contact',
           'footer .brand[aria-label]': 'QuestCompass — home',
           '.copyright': '© <span id="year"></span> QuestCompass. All rights reserved.',
           '.footer-note': 'Not affiliated with Blizzard Entertainment.'
         },
+        contactSent: 'Thanks! Your message has been sent.',
         discount: ' per month · save 20%',
         currency: {
           loading: 'Detecting your region and local currency…',
@@ -869,6 +1024,7 @@
           '.nav-links a:nth-child(2)': 'Как это работает',
           '.nav-links a:nth-child(3)': 'Подписка',
           '.nav-links a:nth-child(4)': 'Вопросы',
+          '.nav-links a:nth-child(5)': 'Связаться',
           '.nav-cta': 'Выбрать подписку',
           '.menu-button': 'Открыть меню',
           '.availability': 'Аддон-проводник для WoW Forever',
@@ -948,10 +1104,21 @@
           '.cta-panel .eyebrow': 'Время в путь',
           '.cta-panel h2': 'Азерот ждёт.<br>Твоё приключение начинается здесь.',
           '.cta-panel .button': 'Выбрать подписку',
+          '.contact-heading .eyebrow': 'Отправить воронова',
+          '.contact-heading h2': 'Свяжись со мной.',
+          '.contact-heading p': 'Есть вопрос, идея или отзыв о QuestCompass? Напиши мне — я отвечу.',
+          '.contact-form label[for="contact-name"]': 'Твоё имя',
+          '.contact-form label[for="contact-email"]': 'Твоя почта',
+          '.contact-form label[for="contact-message"]': 'Сообщение',
+          '.contact-form .button': 'Отправить сообщение',
+          '.contact-note': 'Сообщения отправляются через внешний сервис FormSubmit.',
+          '.contact-close': 'Закрыть форму обратной связи',
+          '.footer-contact': 'Связаться',
           'footer .brand[aria-label]': 'QuestCompass — на главную',
           '.copyright': '© <span id="year"></span> QuestCompass. Все права защищены.',
           '.footer-note': 'Не связан с Blizzard Entertainment.'
         },
+        contactSent: 'Спасибо! Сообщение отправлено.',
         discount: ' в месяц · скидка 20%',
         currency: {
           loading: 'Определяем страну и местную валюту…',
@@ -1012,7 +1179,7 @@
         if (!element) throw new Error(`Missing translation target: ${selector}`);
         if (selector === '.nav') {
           element.setAttribute('aria-label', value);
-        } else if (selector === '.brand[aria-label]' || selector === 'footer .brand[aria-label]' || selector === '.menu-button' || selector === '.map-scene') {
+        } else if (selector === '.brand[aria-label]' || selector === 'footer .brand[aria-label]' || selector === '.menu-button' || selector === '.map-scene' || selector === '.contact-close') {
           element.setAttribute('aria-label', value);
         } else if (selector === '.copyright' || value.includes('<br>') || value.includes('<em>')) {
           element.innerHTML = value;
@@ -1034,6 +1201,9 @@
       quarterPrice.textContent = formatPrice(12 * exchangeRate, detectedCurrency);
       quarterMonthly.textContent = formatPrice(4 * exchangeRate, detectedCurrency);
       document.querySelector('#year').textContent = new Date().getFullYear();
+      document.querySelector('#contact-status').textContent = new URLSearchParams(window.location.search).get('contact') === 'sent'
+        ? copy.contactSent
+        : '';
       updateCurrencyStatus();
     };
 
@@ -1154,6 +1324,29 @@
         menuButton.setAttribute('aria-expanded', 'false');
       });
     });
+    document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!contactDialog.open) contactDialog.showModal();
+      });
+    });
+    contactClose.addEventListener('click', () => contactDialog.close());
+    contactDialog.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        contactDialog.close();
+      }
+    });
+    contactDialog.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      contactDialog.close();
+    });
+    contactDialog.addEventListener('click', (event) => {
+      if (event.target === contactDialog) contactDialog.close();
+    });
+    if (new URLSearchParams(window.location.search).get('contact') === 'sent') {
+      contactDialog.showModal();
+    }
     document.querySelector('#year').textContent = new Date().getFullYear();
   </script>
 </body>
