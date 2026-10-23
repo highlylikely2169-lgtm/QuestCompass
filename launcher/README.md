@@ -33,4 +33,4 @@ The selected game path can be the `_classic_beta_` folder, a WoW folder containi
 
 ## Payment and licensing boundary
 
-Payments and subscriber accounts are not implemented in this launcher. The current GPLv3 addon remains usable after any update/support service expires. A future update service can use a server-side Monobank integration, but must not disable or restrict copies of the GPL addon.
+Payments, subscriber accounts, and protected launcher delivery are not implemented. The current update manifest is public and anyone can access a launcher package hosted at a public URL; it must not be described as payment-gated. A future paid service needs server-side Monobank verification and private package delivery. The GPLv3 addon and source remain available under their license, and this launcher must not disable or restrict copies of the addon.

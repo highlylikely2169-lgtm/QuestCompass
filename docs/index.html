@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101614">
-  <meta name="description" content="QuestCompass is a GPLv3 questing addon for WoW Forever. Download the free release or subscribe for official updates and support.">
+  <meta name="description" content="QuestCompass is a questing addon for WoW Forever. Get the Windows launcher with an update-service plan and install addon patches through it.">
   <title>QuestCompass — Find Your Way</title>
   <style>
     :root {
@@ -354,27 +354,6 @@
     .footer-row .brand-name { font-size: 14px; }
     .copyright, .footer-note { color: #77837a; font-size: 10px; }
 
-    .toast {
-      position: fixed;
-      z-index: 10;
-      right: 24px;
-      bottom: 24px;
-      max-width: min(370px, calc(100% - 48px));
-      padding: 15px 18px;
-      border: 1px solid rgba(198,226,138,.28);
-      border-radius: 10px;
-      color: var(--text);
-      background: #202a23;
-      box-shadow: 0 14px 40px rgba(0,0,0,.38);
-      font-size: 12px;
-      line-height: 1.6;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(8px);
-      transition: opacity .2s, transform .2s;
-    }
-    .toast.show { opacity: 1; transform: translateY(0); }
-
     @media (max-width: 850px) {
       .hero { padding: 68px 0 78px; }
       .hero-grid { grid-template-columns: 1fr .85fr; gap: 22px; }
@@ -451,6 +430,86 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
+
+    :root {
+      --bg: #152035;
+      --surface: #1e2b42;
+      --surface-2: #293953;
+      --line: rgba(234, 197, 112, .24);
+      --text: #f7efdf;
+      --muted: #c0c7d0;
+      --lime: #f0c46b;
+      --lime-dark: #d69f45;
+      --gold: #82d3e5;
+      --font: "Segoe UI", Arial, sans-serif;
+      --display: Georgia, "Times New Roman", serif;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 78% 9%, rgba(70, 150, 190, .2), transparent 31rem),
+        radial-gradient(ellipse at 9% 40%, rgba(190, 139, 62, .09), transparent 34rem),
+        var(--bg);
+    }
+    header { border-bottom-color: rgba(240, 196, 107, .2); background: rgba(13, 20, 34, .7); }
+    .brand-mark { border-color: rgba(240,196,107,.58); background: linear-gradient(145deg, rgba(240,196,107,.18), rgba(92,172,200,.1)); }
+    .nav-links { color: #d0d4dc; }
+    .nav-links a:hover { color: var(--lime); }
+    .language-trigger { border-color: rgba(240,196,107,.25); background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.025)); }
+    .language-trigger:hover, .language-picker.open .language-trigger { border-color: rgba(240,196,107,.62); background: #202c42; }
+    .language-flag { border-color: rgba(240,196,107,.28); background: rgba(240,196,107,.1); }
+    .language-options { border-color: rgba(240,196,107,.25); background: rgba(25,36,56,.98); }
+    .language-option[aria-checked="true"] { border-color: rgba(240,196,107,.28); background: rgba(240,196,107,.1); }
+    .hero::after { border-color: rgba(130,211,229,.12); box-shadow: 0 0 0 64px rgba(130,211,229,.035), 0 0 0 128px rgba(240,196,107,.025); }
+    .availability { color: #d8d6cf; }
+    .availability i { background: #82d3e5; box-shadow: 0 0 13px rgba(130,211,229,.8); }
+    h1, .section-heading h2, .cta-panel h2 { text-shadow: 0 2px 24px rgba(0,0,0,.22); }
+    h1 em { color: var(--lime); text-shadow: 0 0 28px rgba(240,196,107,.2); }
+    .hero-copy > p { color: #c1c8d0; }
+    .hero-note { color: #aeb8c4; }
+    .map {
+      border-color: rgba(240,196,107,.35);
+      background-color: #1b2b37;
+      background-image:
+        radial-gradient(ellipse at 70% 17%, rgba(76,174,198,.37), transparent 29%),
+        radial-gradient(ellipse at 18% 73%, rgba(194,142,64,.25), transparent 34%),
+        linear-gradient(132deg, transparent 0 38%, rgba(202,187,141,.1) 38% 39%, transparent 39% 100%);
+      box-shadow: inset 0 0 70px rgba(8,14,25,.4), 0 25px 80px rgba(0,0,0,.28);
+    }
+    .compass { border-color: rgba(240,196,107,.7); background: radial-gradient(circle at 38% 34%, #39445a, #111a2a 69%); box-shadow: 0 0 0 12px rgba(15,20,16,.33), 0 0 0 13px rgba(240,196,107,.16), 0 19px 50px rgba(0,0,0,.45), 0 0 70px rgba(130,211,229,.16); }
+    .map-card { border-color: rgba(240,196,107,.22); background: rgba(20,30,47,.94); }
+    .card-icon { color: #82d3e5; background: rgba(130,211,229,.14); }
+    .card-text small { color: #a8b6c3; }
+    .proof { background: rgba(98,156,190,.055); }
+    .proof-intro { color: #a4b0bc; }
+    .proof-item { color: #e0e1df; }
+    .section-heading p, .feature p, .step p, details p { color: #b2bac4; }
+    .feature { border-color: rgba(130,211,229,.17); background: linear-gradient(145deg, rgba(58,90,122,.22), rgba(255,255,255,.025)); box-shadow: inset 0 1px rgba(255,255,255,.035); }
+    .feature:hover { border-color: rgba(240,196,107,.42); background: linear-gradient(145deg, rgba(69,105,138,.28), rgba(255,255,255,.035)); }
+    .feature-icon { border-color: rgba(240,196,107,.35); color: var(--lime); background: linear-gradient(145deg, rgba(240,196,107,.16), rgba(130,211,229,.09)); }
+    .how-section { background: linear-gradient(105deg, rgba(54,131,169,.14), rgba(240,196,107,.045) 46%, transparent 78%); }
+    .step { border-bottom-color: rgba(130,211,229,.18); }
+    .step-num { border-color: rgba(240,196,107,.48); color: var(--lime); background: rgba(240,196,107,.07); }
+    .plan { border-color: rgba(130,211,229,.2); background: linear-gradient(155deg, rgba(43,63,91,.56), rgba(255,255,255,.018)); }
+    .plan.featured { border-color: rgba(240,196,107,.7); background: linear-gradient(153deg, rgba(240,196,107,.19), rgba(68,124,157,.13) 52%, rgba(255,255,255,.025)); box-shadow: 0 18px 50px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.07); }
+    .plan-name, .summary { color: #e8e1d2; }
+    .plan-caption, .price span { color: #bac3cd; }
+    .plan .button { border-color: rgba(130,211,229,.35); color: #e7e4dc; }
+    .plan.featured .button { color: #241a0d; background: linear-gradient(135deg, #f3d58e, #e9b857); }
+    .plan .button:disabled { color: #ece5d7; background: rgba(255,255,255,.09); opacity: .82; }
+    .plan.featured .button:disabled { color: #241a0d; background: linear-gradient(135deg, #f3d58e, #e9b857); }
+    .plan ul { border-top-color: rgba(130,211,229,.2); }
+    .plan li { color: #d0d5d8; }
+    .pricing-footnote { color: #aab5c0; }
+    .faq-list { border-top-color: rgba(130,211,229,.22); }
+    details { border-bottom-color: rgba(130,211,229,.19); }
+    summary { color: #ece5d7; }
+    .cta-panel { border-color: rgba(240,196,107,.4); background: radial-gradient(ellipse at 85% 45%, rgba(76,174,198,.22), transparent 48%), linear-gradient(120deg, #1b2940, #202b39 58%, #302a27); }
+    .footer-row { color: #d9d8d1; }
+
+    @media (max-width: 850px) {
+      .nav-links { background: #192438; }
+      .hero::after { right: -42%; width: 95%; }
+    }
   </style>
 </head>
 <body>
@@ -496,14 +555,12 @@
         <div class="hero-copy">
           <div class="availability"><i></i> The questing addon for WoW Forever</div>
           <h1>Your journey.<br>Your <em>legend.</em></h1>
-          <p>QuestCompass is a questing addon for WoW Forever. Download the free GPL release, or subscribe for 30 or 90 days of official launcher updates and support. Your installed addon keeps working after the service ends.</p>
+          <p>QuestCompass is a questing addon for WoW Forever. Choose a 30- or 90-day update-service plan to get the Windows launcher, install the addon, and receive new patches. The addon keeps working after the service ends.</p>
           <div class="hero-actions">
             <a class="button" href="#pricing">Find your path
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
             </a>
             <a class="text-link" href="#features">Explore the features <span>↓</span></a>
-            <a class="text-link download-link" href="downloads/QuestCompass-1.8.0.zip" download>Download free addon v1.8.0 <span>↓</span></a>
-            <a class="text-link launcher-download-link" href="downloads/QuestCompass-Launcher-win-x64-1.8.0.zip" download>Windows launcher beta <span>↓</span></a>
           </div>
           <div class="hero-note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 4.5 2.9 8 7 10 4.1-2 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -596,9 +653,9 @@
           <p>Getting started with QuestCompass should not become an adventure of its own. Jump in and play at your own pace.</p>
         </div>
         <div class="steps">
-          <article class="step"><span class="step-num">01</span><div><h3>Download the free addon</h3><p>Get the current GPLv3 release and its source files.</p></div></article>
-          <article class="step"><span class="step-num">02</span><div><h3>Install the addon</h3><p>Extract both addon folders into your WoW Forever Interface\\AddOns folder.</p></div></article>
-          <article class="step"><span class="step-num">03</span><div><h3>Set out to explore</h3><p>Launch the game and use the guidance whenever you need it.</p></div></article>
+          <article class="step"><span class="step-num">01</span><div><h3>Choose an update plan</h3><p>Select 30 or 90 days of launcher updates and support.</p></div></article>
+          <article class="step"><span class="step-num">02</span><div><h3>Get the Windows launcher</h3><p>After checkout launches, download it from your payment confirmation and install QuestCompass.</p></div></article>
+          <article class="step"><span class="step-num">03</span><div><h3>Keep your addon updated</h3><p>Check for new patches in the launcher, install them, and set out to explore.</p></div></article>
         </div>
       </div>
     </section>
@@ -608,17 +665,17 @@
         <div class="section-heading">
           <span class="eyebrow">Membership</span>
           <h2>Choose your pace.</h2>
-          <p>Every plan includes the full QuestCompass experience. Choose how long you want to explore. Prices are shown in your local currency where available.</p>
+          <p>Choose how long you want official launcher updates and support. The addon itself remains available under GPLv3. Prices are shown in your local currency where available.</p>
         </div>
         <div class="plans">
           <article class="plan" data-plan="1">
             <div class="plan-name">Monthly</div>
             <div class="price"><strong data-month-price>€5.00</strong> <span data-month-period>/ month</span></div>
             <p class="plan-caption">30 days of update service &amp; support</p>
-            <button class="button choose-plan" type="button">Choose plan <span aria-hidden="true">↗</span></button>
+            <button class="button choose-plan" type="button" disabled>Checkout coming soon</button>
             <ul>
-              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Free GPL addon and source</li>
-              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Official launcher updates</li>
+              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Windows launcher after checkout</li>
+              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Addon patches through the launcher</li>
               <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>30 days of support</li>
             </ul>
           </article>
@@ -627,10 +684,10 @@
             <div class="plan-name">3 months</div>
             <div class="price"><strong data-quarter-price>€12.00</strong> <span data-quarter-period>/ 3 months</span></div>
             <p class="plan-caption"><span data-quarter-monthly>€4.00</span> per month · save 20%</p>
-            <button class="button choose-plan" type="button">Choose plan <span aria-hidden="true">↗</span></button>
+            <button class="button choose-plan" type="button" disabled>Checkout coming soon</button>
             <ul>
-              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Free GPL addon and source</li>
-              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Official launcher updates</li>
+              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Windows launcher after checkout</li>
+              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Addon patches through the launcher</li>
               <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>90 days of support</li>
             </ul>
           </article>
@@ -640,13 +697,13 @@
             <p class="plan-caption">Annual update service</p>
             <button class="button choose-plan" type="button" disabled>Coming soon</button>
             <ul>
-              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Free GPL addon and source</li>
-              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Official launcher updates</li>
+              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Windows launcher after checkout</li>
+              <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>Addon patches through the launcher</li>
               <li><svg viewBox="0 0 16 16" fill="none"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.5"/></svg>12 months of support</li>
             </ul>
           </article>
         </div>
-        <p class="pricing-footnote">The paid update service and Monobank checkout are in development. One-time payment only; the addon keeps working after the service expires. Local-currency prices are estimates, and checkout will show the final amount.</p>
+        <p class="pricing-footnote">Monobank checkout and paid launcher delivery are not available yet; these plans are previews and no payment can be made. The GPLv3 addon keeps working after any service ends. Local-currency prices are estimates.</p>
         <p class="pricing-footnote" id="currency-status" role="status" aria-live="polite">Prices are shown in EUR until your local currency is detected. Exchange rates may vary.</p>
       </div>
     </section>
@@ -660,8 +717,8 @@
         </div>
         <div class="faq-list">
           <details><summary>Which game is QuestCompass made for?</summary><p>QuestCompass is an addon for WoW Forever. Check compatibility with your game client version before installing.</p></details>
-          <details><summary>How do I install the addon?</summary><p>Download the free release and extract both QuestCompass folders into your WoW Forever game's Interface\AddOns folder. The ZIP includes the GPLv3 license and source files.</p></details>
-          <details><summary>What does the paid service include?</summary><p>A one-time payment gives you 30 or 90 days of official launcher updates and support. The current GPLv3 addon and its source remain publicly available.</p></details>
+          <details><summary>How do I install the addon?</summary><p>When checkout is available, download the Windows launcher from the payment confirmation, choose your WoW Forever folder, and install QuestCompass. The GPLv3 addon and source remain publicly available under their license.</p></details>
+          <details><summary>What does the paid service include?</summary><p>After checkout launches, a one-time payment will provide the Windows launcher and 30 or 90 days of addon patch delivery and support. The GPLv3 addon and its source remain publicly available; checkout is not live yet.</p></details>
           <details><summary>Will the addon stop working when my service expires?</summary><p>No. GPLv3 copies you've downloaded continue to work. The paid service covers update delivery through the official launcher and support; it does not disable the addon or restrict your rights under the GPL.</p></details>
         </div>
       </div>
@@ -684,10 +741,7 @@
       <span class="footer-note">Not affiliated with Blizzard Entertainment.</span>
     </div>
   </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
-
   <script>
-    const toast = document.querySelector('.toast');
     const menuButton = document.querySelector('.menu-button');
     const navLinks = document.querySelector('.nav-links');
     const languagePicker = document.querySelector('#language-picker');
@@ -702,7 +756,7 @@
     const translations = {
       en: {
         title: 'QuestCompass — Find Your Way',
-        description: 'QuestCompass is a GPLv3 questing addon for WoW Forever. Download the free release or subscribe for official updates and support.',
+        description: 'QuestCompass is a questing addon for WoW Forever. Choose an update-service plan for the Windows launcher and addon patches.',
         languageLabel: 'Select language',
         languageName: 'English',
         text: {
@@ -716,11 +770,9 @@
           '.menu-button': 'Open menu',
           '.availability': 'The questing addon for WoW Forever',
           '.hero-copy h1': 'Your journey.<br>Your <em>legend.</em>',
-          '.hero-copy > p': 'QuestCompass is a questing addon for WoW Forever. Download the free GPL release, or subscribe for 30 or 90 days of official launcher updates and support. Your installed addon keeps working after the service ends.',
+          '.hero-copy > p': 'QuestCompass is a questing addon for WoW Forever. Choose a 30- or 90-day update-service plan to get the Windows launcher, install the addon, and receive new patches. The addon keeps working after the service ends.',
           '.hero-actions .button': 'Find your path',
           '.text-link': 'Explore the features',
-          '.download-link': 'Download free addon v1.8.0',
-          '.launcher-download-link': 'Windows launcher beta',
           '.hero-note': 'Made for a smoother adventure, without the busywork',
           '.map-scene': 'Illustration of a compass and an in-game route',
           '.map-card.quest small': 'Current objective',
@@ -749,45 +801,45 @@
           '#how .eyebrow': 'Easy to get started',
           '#how .section-heading h2': 'Three steps.<br>Then adventure.',
           '#how .section-heading p': 'Getting started with QuestCompass should not become an adventure of its own. Jump in and play at your own pace.',
-          '.step:nth-child(1) h3': 'Download the free addon',
-          '.step:nth-child(1) p': 'Get the current GPLv3 release and its source files.',
-          '.step:nth-child(2) h3': 'Install the addon',
-          '.step:nth-child(2) p': 'Extract both addon folders into your WoW Forever Interface\\\\AddOns folder.',
-          '.step:nth-child(3) h3': 'Set out to explore',
-          '.step:nth-child(3) p': 'Launch the game and use the guidance whenever you need it.',
+          '.step:nth-child(1) h3': 'Choose an update plan',
+          '.step:nth-child(1) p': 'Select 30 or 90 days of launcher updates and support.',
+          '.step:nth-child(2) h3': 'Get the Windows launcher',
+          '.step:nth-child(2) p': 'After checkout launches, download it from your payment confirmation and install QuestCompass.',
+          '.step:nth-child(3) h3': 'Keep your addon updated',
+          '.step:nth-child(3) p': 'Check for new patches in the launcher, install them, and set out to explore.',
           '#pricing .eyebrow': 'Membership',
           '#pricing .section-heading h2': 'Choose your pace.',
-          '#pricing .section-heading p': 'The GPL addon is free to download. A one-time plan adds official launcher updates and support for a set period. Prices are shown in your local currency where available.',
+          '#pricing .section-heading p': 'Choose how long you want official launcher updates and support. The addon itself remains available under GPLv3. Prices are shown in your local currency where available.',
           '[data-plan="1"] .plan-name': 'Monthly',
           '[data-plan="1"] [data-month-period]': '/ month',
           '[data-plan="1"] .plan-caption': '30 days of update service & support',
-          '[data-plan="1"] .choose-plan': 'Choose plan',
-          '[data-plan="1"] li:nth-child(1)': 'Free GPL addon and source',
-          '[data-plan="1"] li:nth-child(2)': 'Official launcher updates',
+          '[data-plan="1"] .choose-plan': 'Checkout coming soon',
+          '[data-plan="1"] li:nth-child(1)': 'Windows launcher after checkout',
+          '[data-plan="1"] li:nth-child(2)': 'Addon patches through the launcher',
           '[data-plan="1"] li:nth-child(3)': '30 days of support',
           '[data-plan="3"] .popular': 'Best value',
           '[data-plan="3"] .plan-name': '3 months',
           '[data-plan="3"] [data-quarter-period]': '/ 3 months',
-          '[data-plan="3"] .choose-plan': 'Choose plan',
-          '[data-plan="3"] li:nth-child(1)': 'Free GPL addon and source',
-          '[data-plan="3"] li:nth-child(2)': 'Official launcher updates',
+          '[data-plan="3"] .choose-plan': 'Checkout coming soon',
+          '[data-plan="3"] li:nth-child(1)': 'Windows launcher after checkout',
+          '[data-plan="3"] li:nth-child(2)': 'Addon patches through the launcher',
           '[data-plan="3"] li:nth-child(3)': '90 days of support',
           '[data-plan="12"] .plan-name': 'Annual',
           '[data-plan="12"] .price strong': 'Coming soon',
           '[data-plan="12"] .plan-caption': 'Annual update service',
           '[data-plan="12"] .choose-plan': 'Coming soon',
-          '[data-plan="12"] li:nth-child(1)': 'Free GPL addon and source',
-          '[data-plan="12"] li:nth-child(2)': 'Official launcher updates',
+          '[data-plan="12"] li:nth-child(1)': 'Windows launcher after checkout',
+          '[data-plan="12"] li:nth-child(2)': 'Addon patches through the launcher',
           '[data-plan="12"] li:nth-child(3)': '12 months of support',
-          '.pricing-footnote:not(#currency-status)': 'The paid update service and Monobank checkout are in development. One-time payment only; the addon keeps working after the service expires. Local-currency prices are estimates, and checkout will show the final amount.',
+          '.pricing-footnote:not(#currency-status)': 'Monobank checkout and paid launcher delivery are not available yet; these plans are previews and no payment can be made. The GPLv3 addon keeps working after any service ends. Local-currency prices are estimates.',
           '#faq .section-heading h2': 'Got questions?',
           '#faq .section-heading p': 'Here are a few answers to help you get ready for your next adventure.',
           '.faq-list details:nth-child(1) summary': 'Which game is QuestCompass made for?',
           '.faq-list details:nth-child(1) p': 'QuestCompass is an addon for WoW Forever. Check compatibility with your game client version before installing.',
           '.faq-list details:nth-child(2) summary': 'How do I install the addon?',
-          '.faq-list details:nth-child(2) p': 'Download the free release and extract both QuestCompass folders into your WoW Forever client AddOns folder. The ZIP includes the GPLv3 license and source files.',
+          '.faq-list details:nth-child(2) p': 'When checkout is available, download the Windows launcher from the payment confirmation, choose your WoW Forever folder, and install QuestCompass. The GPLv3 addon and source remain publicly available under their license.',
           '.faq-list details:nth-child(3) summary': 'What does the paid service include?',
-          '.faq-list details:nth-child(3) p': 'A one-time payment gives you 30 or 90 days of official launcher updates and support. The current GPLv3 addon and its source remain publicly available.',
+          '.faq-list details:nth-child(3) p': 'After checkout launches, a one-time payment will provide the Windows launcher and 30 or 90 days of addon patch delivery and support. The GPLv3 addon and its source remain publicly available; checkout is not live yet.',
           '.faq-list details:nth-child(4) summary': 'Will the addon stop working when my service expires?',
           '.faq-list details:nth-child(4) p': 'No. GPLv3 copies continue to work after download. The paid service covers update delivery through the official launcher and support; it does not disable the addon or restrict your rights under the GPL.',
           '.cta-panel .eyebrow': 'Your next adventure',
@@ -803,12 +855,11 @@
           local: (currency, country) => `Prices shown in ${currency} for ${country}, converted from EUR. Exchange rates may vary.`,
           euro: (country) => `Prices shown in EUR for ${country}. Exchange rates may vary.`,
           unavailable: 'Local currency lookup is unavailable. Prices are shown in EUR; exchange rates may vary.',
-          payment: 'Monobank checkout is not connected yet. No payment has been made.'
         }
       },
       ru: {
         title: 'QuestCompass — Найди свой путь',
-        description: 'QuestCompass — аддон для WoW Forever под лицензией GPLv3. Скачайте бесплатную версию или оплатите официальные обновления и поддержку.',
+        description: 'QuestCompass — аддон для WoW Forever. Выберите план обновлений, чтобы получить лаунчер для Windows и патчи аддона.',
         languageLabel: 'Выбрать язык',
         languageName: 'Русский',
         text: {
@@ -822,11 +873,9 @@
           '.menu-button': 'Открыть меню',
           '.availability': 'Аддон-проводник для WoW Forever',
           '.hero-copy h1': 'Твой путь.<br>Твоя <em>легенда.</em>',
-          '.hero-copy > p': 'QuestCompass — аддон для WoW Forever. Скачай бесплатную версию GPL или оплати 30/90 дней официальных обновлений через лаунчер и поддержки. Уже установленный аддон продолжит работать после окончания срока.',
+          '.hero-copy > p': 'QuestCompass — аддон для WoW Forever. Выбери план сервиса обновлений на 30 или 90 дней, чтобы получить лаунчер для Windows, установить аддон и получать новые патчи. Аддон продолжит работать после окончания срока.',
           '.hero-actions .button': 'Открыть свой маршрут',
           '.text-link': 'Узнать о возможностях',
-          '.download-link': 'Скачать аддон v1.8.0 бесплатно',
-          '.launcher-download-link': 'Скачать лаунчер для Windows (бета)',
           '.hero-note': 'Для комфортной игры — без лишней суеты',
           '.map-scene': 'Иллюстрация компаса и игрового маршрута',
           '.map-card.quest small': 'Текущая цель',
@@ -855,45 +904,45 @@
           '#how .eyebrow': 'Начать легко',
           '#how .section-heading h2': 'Три шага —<br>и в путь.',
           '#how .section-heading p': 'Подключение QuestCompass не должно становиться отдельным приключением. Начни играть в своём темпе.',
-          '.step:nth-child(1) h3': 'Скачай бесплатный аддон',
-          '.step:nth-child(1) p': 'Скачай актуальную версию GPLv3 и её исходники.',
-          '.step:nth-child(2) h3': 'Установи аддон',
-          '.step:nth-child(2) p': 'Распакуй обе папки аддона в Interface\\AddOns клиента WoW Forever.',
-          '.step:nth-child(3) h3': 'Отправляйся исследовать',
-          '.step:nth-child(3) p': 'Запусти игру и используй подсказки, когда они нужны.',
+          '.step:nth-child(1) h3': 'Выбери план обновлений',
+          '.step:nth-child(1) p': 'Выбери 30 или 90 дней обновлений через лаунчер и поддержки.',
+          '.step:nth-child(2) h3': 'Получи лаунчер для Windows',
+          '.step:nth-child(2) p': 'После запуска оплаты скачай его из подтверждения платежа и установи QuestCompass.',
+          '.step:nth-child(3) h3': 'Обновляй аддон',
+          '.step:nth-child(3) p': 'Проверяй патчи в лаунчере, устанавливай их и отправляйся исследовать мир.',
           '#pricing .eyebrow': 'Подписка',
           '#pricing .section-heading h2': 'Выбери свой темп.',
-          '#pricing .section-heading p': 'Аддон под лицензией GPL можно скачать бесплатно. Разовая оплата даёт доступ к официальным обновлениям через лаунчер и поддержке на выбранный срок. Где возможно, цена указана в местной валюте.',
+          '#pricing .section-heading p': 'Выбери срок доступа к официальным обновлениям через лаунчер и поддержке. Сам аддон остаётся доступен по лицензии GPLv3. Где возможно, цена указана в местной валюте.',
           '[data-plan="1"] .plan-name': 'На месяц',
           '[data-plan="1"] [data-month-period]': '/ месяц',
           '[data-plan="1"] .plan-caption': '30 дней обновлений и поддержки',
-          '[data-plan="1"] .choose-plan': 'Выбрать план',
-          '[data-plan="1"] li:nth-child(1)': 'Бесплатный аддон GPL и исходники',
-          '[data-plan="1"] li:nth-child(2)': 'Обновления через официальный лаунчер',
+          '[data-plan="1"] .choose-plan': 'Оплата скоро',
+          '[data-plan="1"] li:nth-child(1)': 'Лаунчер для Windows после оплаты',
+          '[data-plan="1"] li:nth-child(2)': 'Патчи аддона через лаунчер',
           '[data-plan="1"] li:nth-child(3)': '30 дней поддержки',
           '[data-plan="3"] .popular': 'Выгоднее',
           '[data-plan="3"] .plan-name': 'На 3 месяца',
           '[data-plan="3"] [data-quarter-period]': '/ 3 месяца',
-          '[data-plan="3"] .choose-plan': 'Выбрать план',
-          '[data-plan="3"] li:nth-child(1)': 'Бесплатный аддон GPL и исходники',
-          '[data-plan="3"] li:nth-child(2)': 'Обновления через официальный лаунчер',
+          '[data-plan="3"] .choose-plan': 'Оплата скоро',
+          '[data-plan="3"] li:nth-child(1)': 'Лаунчер для Windows после оплаты',
+          '[data-plan="3"] li:nth-child(2)': 'Патчи аддона через лаунчер',
           '[data-plan="3"] li:nth-child(3)': '90 дней поддержки',
           '[data-plan="12"] .plan-name': 'На год',
           '[data-plan="12"] .price strong': 'Скоро',
           '[data-plan="12"] .plan-caption': 'Годовой сервис обновлений',
           '[data-plan="12"] .choose-plan': 'Скоро',
-          '[data-plan="12"] li:nth-child(1)': 'Бесплатный аддон GPL и исходники',
-          '[data-plan="12"] li:nth-child(2)': 'Обновления через официальный лаунчер',
+          '[data-plan="12"] li:nth-child(1)': 'Лаунчер для Windows после оплаты',
+          '[data-plan="12"] li:nth-child(2)': 'Патчи аддона через лаунчер',
           '[data-plan="12"] li:nth-child(3)': '12 месяцев поддержки',
-          '.pricing-footnote:not(#currency-status)': 'Платный сервис обновлений и оплата через Monobank пока в разработке. Оплата будет разовой; после окончания срока аддон продолжит работать. Цены в местной валюте приблизительные, итоговую сумму покажет страница оплаты.',
+          '.pricing-footnote:not(#currency-status)': 'Оплата через Monobank и платная выдача лаунчера пока недоступны; тарифы показаны для ознакомления, оплатить их пока нельзя. Аддон GPLv3 продолжит работать после окончания любого сервиса. Цены в местной валюте приблизительные.',
           '#faq .section-heading h2': 'Остались вопросы?',
           '#faq .section-heading p': 'Ответы на вопросы, которые помогут подготовиться к новому приключению.',
           '.faq-list details:nth-child(1) summary': 'Для какой игры создан QuestCompass?',
           '.faq-list details:nth-child(1) p': 'QuestCompass — аддон для WoW Forever. Перед установкой проверь совместимость со своей версией игрового клиента.',
           '.faq-list details:nth-child(2) summary': 'Как установить аддон?',
-          '.faq-list details:nth-child(2) p': 'Скачай бесплатный архив и распакуй обе папки QuestCompass в папку Interface\\AddOns клиента WoW Forever. В ZIP включены лицензия GPLv3 и исходные файлы.',
+          '.faq-list details:nth-child(2) p': 'Когда оплата заработает, скачай лаунчер для Windows из подтверждения платежа, выбери папку WoW Forever и установи QuestCompass. Аддон GPLv3 и его исходный код остаются общедоступными в соответствии с лицензией.',
           '.faq-list details:nth-child(3) summary': 'Что входит в платный сервис?',
-          '.faq-list details:nth-child(3) p': 'Разовая оплата даёт 30 или 90 дней официальных обновлений через лаунчер и поддержки. Текущая версия аддона GPL и её исходники остаются общедоступными.',
+          '.faq-list details:nth-child(3) p': 'После запуска оплаты разовый платёж даст лаунчер для Windows и 30 или 90 дней доставки патчей и поддержки. Аддон GPLv3 и его исходники остаются общедоступными; оплата пока не подключена.',
           '.faq-list details:nth-child(4) summary': 'Перестанет ли аддон работать после окончания срока?',
           '.faq-list details:nth-child(4) p': 'Нет. Уже скачанная версия GPL продолжит работать. Платный сервис включает доставку обновлений через официальный лаунчер и поддержку, но не отключает аддон и не ограничивает права по GPL.',
           '.cta-panel .eyebrow': 'Время в путь',
@@ -909,11 +958,9 @@
           local: (currency, country) => `Цены указаны в валюте ${currency} для региона «${country}», пересчитаны из евро. Курс может меняться.`,
           euro: (country) => `Цены для региона «${country}» указаны в евро. Курс может меняться.`,
           unavailable: 'Не удалось определить местную валюту. Цены указаны в евро; курс может меняться.',
-          payment: 'Оплата через Monobank пока не подключена. Платёж не выполнен.'
         }
       }
     };
-    let toastTimer;
     let currentLanguage = 'en';
     let manualLanguage = false;
     let detectedCountry = '';
@@ -1095,16 +1142,6 @@
 
     setLanguage(currentLanguage);
     showLocalPrices();
-
-    document.querySelectorAll('.choose-plan').forEach((button) => {
-      button.addEventListener('click', () => {
-        if (button.closest('.plan').dataset.plan === '12') return;
-        toast.textContent = translations[currentLanguage].currency.payment;
-        toast.classList.add('show');
-        window.clearTimeout(toastTimer);
-        toastTimer = window.setTimeout(() => toast.classList.remove('show'), 5200);
-      });
-    });
 
     menuButton.addEventListener('click', () => {
       const isOpen = menuButton.getAttribute('aria-expanded') === 'true';

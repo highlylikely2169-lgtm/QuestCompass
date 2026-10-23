@@ -1,8 +1,10 @@
 # GitHub Pages deployment
 
-The static production site is staged in `docs\`. It includes only the website, public addon downloads, launcher download, and update feed; it excludes local .NET build outputs.
+The static production site is staged in `docs\`. It includes the website, public GPL addon archive, and update feed; it excludes launcher binaries and local .NET build outputs.
 
 The site is available at `https://highlylikely2169-lgtm.github.io/QuestCompass/`. The custom domain `questcompass.online` is not active until its DNS records are configured.
+
+Monobank checkout and protected launcher delivery are not implemented. GitHub Pages is public static hosting and cannot verify payments or protect a download URL. Keep launcher packages off this site until a payment backend and private delivery flow are in place. The GPL addon and source remain publicly available under their license.
 
 ## Publish
 
@@ -16,7 +18,7 @@ GitHub Pages deployment and DNS are not configured from this local folder. Verif
 
 ## Refreshing a release
 
-1. Update the public addon ZIP and `updates\latest.json` (version, absolute download URL, and SHA-256).
-2. Update the bundled ZIP/version/hash in the launcher project as needed, then publish a new self-contained launcher and replace its ZIP under `downloads\`.
-3. Copy the updated `index.html`, `downloads\`, and `updates\` into `docs\`, preserving the existing `CNAME` and `.nojekyll`.
-4. Push the changes to GitHub. The launcher checks `https://highlylikely2169-lgtm.github.io/QuestCompass/updates/latest.json`.
+1. Update the public GPL addon ZIP and `updates\latest.json` (version, absolute download URL, and SHA-256).
+2. Copy the updated site, public addon ZIP, and update manifest into `docs\`.
+3. Push the changes to GitHub. The current launcher can check the public manifest at `https://highlylikely2169-lgtm.github.io/QuestCompass/updates/latest.json` and install a newer package.
+4. For paid launcher delivery, implement and verify Monobank payments on a server before distributing any launcher through a paid flow. Do not publish private packages or payment secrets in this repository.
